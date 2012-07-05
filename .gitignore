@@ -1,0 +1,28 @@
+# Visual studio files
+[Oo]bj
+[Bb]in
+*/sql/release/*
+*/Content/combined*.css
+*/Content/*.less.debug.css
+*/ProfileImages/*
+*/Import Schema Logs/*
+*/packages/*
+*.mdf
+*.ldf
+*.user
+*.suo
+*.vspscc
+*.vssscc
+*.[Cc]ache
+*.bak
+*.ncb
+*.log 
+*.DS_Store
+[Tt]humbs.db
+*.dbmdl
+
+#log4net log files
+log.txt*
+
+# mstest test results
+TestResults
