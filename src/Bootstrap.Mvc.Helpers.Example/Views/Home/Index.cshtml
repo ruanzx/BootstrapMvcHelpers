@@ -7,7 +7,15 @@
     To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
 </p>
 
-@(Html.Bootstrap().Button()
-    .Name("hello")
+@(Html.Bootstrap().LinkButton("hello")
     .Text("Hello World")
+    .Style(ButtonStyle.Info)
     )
+<input type="button" class="btn" value="Hello World" />
+<button type="button" class="btn btn-danger">Hello World</button>
+<p />
+<div class="btn-group">
+  <input type="button" class="btn btn-danger" value="1"></input>
+  <input type="button" class="btn" value="2"></input>
+  <input type="button" class="btn" value="3"></input>
+</div>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using Bootstrap.Mvc.Helpers.Fluent;
+using Bootstrap.Mvc.Helpers.Builders;
 using System.Linq.Expressions;
 
 namespace Bootstrap.Mvc.Helpers
@@ -17,20 +17,30 @@ namespace Bootstrap.Mvc.Helpers
             this.HtmlHelper = htmlHelper;
         }
 
-        public ButtonBuilder Button()
+        public ButtonBuilder Button(string name)
         {
-            return new ButtonBuilder(new Button());
+            return new ButtonBuilder(new Button(HtmlHelper, name));
+        }
+
+        public InputButtonBuilder InputButton(string name)
+        {
+            return new InputButtonBuilder(new InputButton(HtmlHelper, name));
+        }
+
+        public LinkButtonBuilder LinkButton(string name)
+        {
+            return new LinkButtonBuilder(new LinkButton(HtmlHelper, name));
         }
     }
 
     public class ComponentFactory<TModel> : ComponentFactory
     {
-        public HtmlHelper<TModel> HtmlHelper { get; set; }
+        //public HtmlHelper<TModel> HtmlHelper { get; set; }
 
         public ComponentFactory(HtmlHelper<TModel> htmlHelper)
             : base(htmlHelper)
         {
-            this.HtmlHelper = htmlHelper;
+            //this.HtmlHelper = htmlHelper;
         }
     }
 }

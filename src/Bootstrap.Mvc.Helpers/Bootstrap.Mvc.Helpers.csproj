@@ -21,6 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,11 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BootstrapExtensions.cs" />
+    <Compile Include="Builders\InputButtonBuilder.cs" />
+    <Compile Include="ButtonType.cs" />
     <Compile Include="Button.cs" />
+    <Compile Include="ButtonBase.cs" />
+    <Compile Include="Builders\ButtonBuilder.cs" />
+    <Compile Include="Builders\LinkButtonBuilder.cs" />
+    <Compile Include="LinkButton.cs" />
+    <Compile Include="InputButton.cs" />
+    <Compile Include="ButtonSize.cs" />
+    <Compile Include="ButtonStyle.cs" />
     <Compile Include="ComponentBase.cs" />
     <Compile Include="ComponentFactory.cs" />
-    <Compile Include="Fluent\ButtonBuilder.cs" />
-    <Compile Include="Fluent\ComponentBuilderBase.cs" />
+    <Compile Include="Builders\ButtonBuilderBase.cs" />
+    <Compile Include="Builders\ComponentBuilderBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,17 +6,19 @@ using System.Web.Mvc;
 
 namespace Bootstrap.Mvc.Helpers
 {
-    public class Button : ComponentBase
+    public class Button : ButtonBase
     {
-        public string Text { get; set; }
+        public ButtonType ButtonType { get; set; }
 
-        public override string ToHtmlString()
+        protected override string TagName
         {
-            TagBuilder builder = new TagBuilder("button");
-            builder.MergeAttribute("name", Name, true);
-            builder.InnerHtml = Text;
+            get { return "button"; }
+        }
 
-            return builder.ToString(TagRenderMode.Normal);
+        public Button(HtmlHelper htmlHelper, string name)
+            : base(htmlHelper, name)
+        {
+            ButtonType = ButtonType.Button;
         }
     }
 }
